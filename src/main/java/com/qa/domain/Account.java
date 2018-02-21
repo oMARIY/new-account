@@ -1,15 +1,31 @@
 package com.qa.domain;
 
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Account {
 
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long ID;
+	@Column
 	private String firstName;
+	@Column
 	private String secondName;
+	@Column
 	private String accountNumber;
+	
+	
 
 	public Account(String firstName, String secondName, String accountNumber) {
 		this.firstName = firstName;
 		this.secondName = secondName;
 		this.accountNumber = accountNumber;
+		
 	}
 
 	public String getFirstName() {
